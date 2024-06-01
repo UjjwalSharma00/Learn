@@ -1,0 +1,19 @@
+services:
+  AAA:
+    image: hoh
+    ports:
+      - "8080:8080"
+    environment:
+      - "AAA_ENV=dev"
+    container_name: hoh
+    networks:
+      - new-net
+
+    volumes:
+      - Z:\Coding\Projects\Python\docker learn\names.txt:/AAA/names.txt
+
+  # new containter:
+  # build: ./             # build from an existing Dockerfile
+
+networks:
+  new-net:

@@ -1,0 +1,10 @@
+IMAGES
+  docker build . .
+  docker images                                  #
+    -t (name:version)                            #
+
+  docker rmi (image id/ name:version)            #
+
+CON
+  docker ps(#running) / ps -a(#all)
+  docker run (image id / name:version)

@@ -1,0 +1,9 @@
+Dcoker application in EC2
+
+
+sudo su                                           # gain admin permissions
+yum install docker
+docker pull thyluminary/hohoho:02                 # download an imges from docker hub   # name:ver
+docker images
+
+docker run docker run --rm -it 98aafabdc1b3       # run tha image
