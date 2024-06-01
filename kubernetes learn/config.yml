@@ -1,0 +1,62 @@
+# Deployment manages a set of Pods to run an application workload, usually one that doesn't maintain state
+
+apiVersion: apps/v1                          # deployments v1 app
+kind: Deployment                             # Deployment, Service, Pods, configMap etc.
+metadata:  
+  name: pyapp-deployment                     # Deployment Name
+  labels:
+    app: pyapp                           
+spec:
+  replicas: 3                                # NO. of replica Pods
+  selector:
+    matchLabels:
+      app: pyapp                         
+  template:                                  # template for Pod
+    metadata:                                
+      labels:
+        app: pyapp                         
+    spec: 
+      containers:
+      - name:  xyz                            # Container Name
+        image: python xyz:2                   # Image:ver to run inside container
+        ports: 
+        - containerPort: 80                   # Port to expose
+        volumeMounts:                         # Volume to be mounted                           # For persistent storage
+          - name: pyapp-persistent-vol       
+            mountPath: /xyz/xyz/              # Path to mount
+
+        env:                                  # Environment Variables to be set
+        - name: congifMap
+          valuefrom:
+            configMapKeyRef:                  # Reference to ConfigMap
+              name: configMap-config
+              key: player_initial_lives
+
+      - name: (container_2 name)              # Container Name                                 # another container in same Pod
+        image: (name:ver)                     # Image:ver to run inside container
+
+      volumes:                                # Volume to be mounted                           # For persistent storage
+      - name: pyapp-persistent-vol            
+        persistentVolumeClaim:                # Type of Volume
+          claimName: database-pvc             # PVC Name
+
+---
+# Service is for exposing an endpoint for an application that is running as one or more Pods in your cluster to receive traffic.
+# Internal / External Service
+
+apiVersion: v1
+kind: Service                                 # Service, Pod, Deployment, etc.
+metadata:
+  name: xyz-service                           # Service Name
+spec:
+  ports:
+  - name: xyz                  
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  selector:
+    app: xyz                                  # Pod name                          # Service will be applied to this Pod
+  type: LoadBalancer
+
+
+# HOW TO RUN: kubectl apply -f (file name)

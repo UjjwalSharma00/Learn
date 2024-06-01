@@ -1,0 +1,27 @@
+minikube start / delete
+minikube status
+minikube dashboard
+
+kubectl create deployment (name) --image=(name of repository):version                               # Rollout deployment
+kubectl delete (eg-deployment) (D-name)
+
+kubectl get (services / deployments / pods etc)
+
+kubectl expose (deployment/pod etc) (deployment name) --type=(eg LoadBalancing) --port=(eg 80)       # port binding
+
+minikube service (service name | eg deployment name)                                                 # Info about that service
+
+APP updating
+   build new image
+   kubectl set image deployment (deployment name) (container name)=(new image name:version)
+
+Rollback
+   kubectl rollout status deployment (deployment name)                              # Rollout status
+   kubectl rollout undo deployment (deployment name)                                # Undo rollout
+
+Scaling
+   kubectl scale deployment (deployment name) --replicas=(No. of instances)                        # No. of instances = No. of Pods
+
+   
+
+# HOW TO RUN config files: kubectl apply -f (file name)
