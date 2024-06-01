@@ -9,3 +9,7 @@ metadata:
   name: configMap-config
 data:
   player_initial_lives: "3"
+
+---
+
+secrets
