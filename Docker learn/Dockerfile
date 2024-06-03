@@ -5,8 +5,9 @@ WORKDIR /main
 COPY ./main.py .
 COPY ./names.txt .
 
-CMD [ "python", "main.py" ]
 # RUN pip install (Py library)
+
+CMD [ "python", "main.py" ]
 
 # PULL
 # EXPOSE (port No.)
