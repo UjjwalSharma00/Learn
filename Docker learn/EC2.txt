@@ -1,4 +1,4 @@
-Dcoker application in EC2
+Docker application in EC2
 
 
 sudo su                                           # gain admin permissions
