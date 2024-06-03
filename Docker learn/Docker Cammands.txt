@@ -10,7 +10,7 @@ CONTAINERS
   docker ps(#running) / ps -a(#all)              # list if containers
   docker run (image id / name:version)
     -it                                          # interactive terminal
-    -p                                           # add port
+    -p (host port):(container port)              # add port
     -d                                           # run permanently / detach mode
     --network                                    # add network
 
