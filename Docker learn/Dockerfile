@@ -8,7 +8,7 @@ COPY ./names.txt .
 
 # RUN pip install (Py library)
 
-CMD [ "python", "main.py" ]
-
 # PULL
 # EXPOSE (port No.)
+
+CMD [ "python", "main.py" ]
