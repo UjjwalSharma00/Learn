@@ -3,6 +3,7 @@ Docker application in EC2
 
 sudo su                                           # gain admin permissions
 yum install docker
+systemctl start docker                            # start docker daemon
 docker pull thyluminary/hohoho:02                 # download an imges from docker hub   # name:ver
 docker images
 
