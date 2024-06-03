@@ -11,7 +11,7 @@ CONTAINERS
   docker run (image id / name:version)
     -it                                          # interactive terminal
     -p                                           # add port
-    -d                                           # run permanently
+    -d                                           # run permanently / detach mode
     --network                                    # add network
 
     -v (path to bind in local):(path to bind in container)       # mount volume
