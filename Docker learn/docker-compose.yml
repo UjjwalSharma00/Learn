@@ -13,7 +13,8 @@ services:
       - Z:\Coding\Projects\Python\docker learn\names.txt:/AAA/names.txt
 
   # new containter:
-  # build: ./             # build from an existing Dockerfile
+  BBB                             # build from an existing Dockerfile
+    # build: ./(path to a docker file)             
 
-networks:
-  new-net:
+  networks:
+    new-net:
