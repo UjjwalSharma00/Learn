@@ -2,7 +2,7 @@ FROM python
 
 WORKDIR /main
 
-COPY . .                          # copy all in current dir
+# COPY . .                          # copy all in current dir
 COPY ./main.py .
 COPY ./names.txt .
 
