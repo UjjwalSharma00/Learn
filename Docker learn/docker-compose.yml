@@ -12,9 +12,12 @@ services:
     volumes:
       - Z:\Coding\Projects\Python\docker learn\names.txt:/AAA/names.txt
 
-  # new containter:
-  BBB                             # build from an existing Dockerfile
-    # build: ./(path to a docker file)             
+  # # new containter:
+  # BBB                               # build from an existing Dockerfile
+  #   build: ./(path to a docker file)             
 
-  networks:
-    new-net:
+  # networks:
+  #   new-net:
+
+
+docker-compose (up/down)             # to run/stop
