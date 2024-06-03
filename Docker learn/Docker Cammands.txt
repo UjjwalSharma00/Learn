@@ -1,10 +1,20 @@
 IMAGES
   docker build . .
-  docker images                                  #
-    -t (name:version)                            #
+  docker images                                  # list of images
+    -t (name:version)                            # add name and version
 
-  docker rmi (image id/ name:version)            #
+  docker rmi (image id/ name:version)            # remove image
 
-CON
-  docker ps(#running) / ps -a(#all)
+CONTAINERS  
+  docker ps(#running) / ps -a(#all)              # list if containers
   docker run (image id / name:version)
+    -it                                          # interactive terminal
+    -p                                           # add port
+    -d                                           # run permanently
+    --network                                    # add network
+
+    -v (path to bind in local):(path to bind in container)       # mount volume
+    -v (vol name):(vol dir or path)                              # add volume
+
+  docker stop (container name)                   # stop container
+  docker rm (container name)                     # remove container
