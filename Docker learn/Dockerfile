@@ -11,5 +11,3 @@ CMD [ "python", "main.py" ]
 
 # PULL
 # EXPOSE (port No.)
-
-# RUN 
