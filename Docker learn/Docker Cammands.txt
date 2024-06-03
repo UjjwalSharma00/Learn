@@ -5,6 +5,7 @@ IMAGES
 
   docker rmi (image id/ name:version)            # remove image
 
+
 CONTAINERS  
   docker ps(#running) / ps -a(#all)              # list if containers
   docker run (image id / name:version)
@@ -18,3 +19,9 @@ CONTAINERS
 
   docker stop (container name)                   # stop container
   docker rm (container name)                     # remove container
+
+
+NETWORKS                                                      # virtual network to enable communication between Docker containers
+  docker network create 
+  docker network connect
+  docker network ls 
