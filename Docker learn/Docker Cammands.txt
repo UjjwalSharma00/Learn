@@ -25,3 +25,20 @@ NETWORKS                                                      # virtual network 
   docker network create 
   docker network connect
   docker network ls 
+
+
+ENTER CONTAINER
+  docker run -d --name (container-name) -p 8080:8080 jenkins/jenkins:lts            // Run container
+  docker run -u 0 -d --name (container-name) -p 8080:8080 jenkins/jenkins:lts       // Run container as root
+
+  docker logs -f (container-id)                                                     // jenkins password
+
+  docker exec -it (container-id) bash                                               // To enter container
+  docker exec -u 0 -it (container-id) bash                                          // Enter container as root user   // -u (0) (#for root)
+
+  apt-get update && apt-get install python3-pip                                     // Install python
+
+  apt install python3-(package name)                                                // To install python packages
+
+
+  docker logs (ID)                               # logs
