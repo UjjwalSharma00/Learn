@@ -41,4 +41,4 @@ ENTER CONTAINER
   apt install python3-(package name)                                                // To install python packages
 
 
-  docker logs (ID)                               # logs
+docker logs (ID)                               # logs
