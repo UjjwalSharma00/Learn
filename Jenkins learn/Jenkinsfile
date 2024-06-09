@@ -1,0 +1,80 @@
+pipeline {
+    agent {                                            // (agent any) for any available agent
+        node {
+            label 'docker-agent-python'                // label of the agent to use
+            }
+        }
+                                                       // OR   
+    // agent {                                            
+    //     docker { image '(Name):(Tag)' }                // Docker image as agent
+    //     } 
+
+    triggers {
+        pollSCM '* * * * *'                            // Poll the SCM every minute
+
+    // environment {
+    //     AGE = '25'                                     // Set AGE environment variable
+    //     PATH = "/usr/local/bin:$PATH"                  // Or Set the PATH environment variable
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building.."                     // Print message to console                                          
+                sh '''                                // Execute shell script with sh ''' '''          //Error
+                cd myapp                              // Change directory to myapp                     //E
+                pip install -r requirements.txt       // Install dependencies from requirements.txt    //E
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+                sh '''
+                cd myapp
+                python3 hello.py                       // Run the hello.py script                     //E
+                python3 hello.py --name=Brad           // Run the hello.py script with an argument    //E
+                '''
+            }
+        }
+        stage('Approve') {
+            steps {
+                input 'Do you want to deploy to production?'     // Wait for user input to proceed
+            }
+        }
+        
+        stage('Deliver') {
+            steps {
+                echo 'Deliver....'
+                sh '''
+                echo "doing delivery stuff.."          // Print message to console                   //E
+                '''
+                // retry(3) {                               // Retry the following block 3 times if it fails
+                //     sh '''
+                //     echo "doing delivery stuff.."
+                //     '''
+                // }
+
+                // timeout(time: 3, unit: 'MINUTES') {      // Timeout the following block after 3 minutes
+                //     sh '''
+                //     echo "doing delivery stuff.."
+                //     '''
+                // }
+            }
+        }
+        // post{failure{
+        //     echo "Build failed"
+        //     mail to: 'xyz@mail.com',
+        //     subject: "Build failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+        //     body: "The build failed"
+        // }
+
+        // success{
+        //     echo "Build success"
+        //     archiveArtifacts artifacts: 'myapp/*.txt', onlyIfSuccessful: true
+        // }
+    }
+}
+
+
+
+// http://localhost:8080/directive-generator/                     // Directive generator
