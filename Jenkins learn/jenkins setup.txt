@@ -8,7 +8,8 @@ docker logs -f (container-id)                                                   
 docker exec -it (container-id) bash                                               // To enter container
 docker exec -u 0 -it (container-id) bash                                          // Enter container as root user   // -u (0) (#for root)
 
-apt-get update && apt-get install python3-pip                                     // Install python
+apt-get update && apt-get install python3-pip                                     // Install python and pip
+apt install pipx                                                                  // Install pipx
 
 apt install python3-(package name)                                                // To install python packages
 
