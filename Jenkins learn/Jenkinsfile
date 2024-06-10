@@ -10,7 +10,7 @@ pipeline {
     //     } 
 
     triggers {
-        pollSCM '*/1 * * * *'                            // Poll the SCM every minute
+        pollSCM '* * * * *'                            // Poll the SCM every minute
 
     // environment {
     //     AGE = '25'                                     // Set AGE environment variable
