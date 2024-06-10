@@ -10,12 +10,12 @@ pipeline {
     //     } 
 
     triggers {
-        pollSCM '* * * * *'                            // Poll the SCM every minute
+        pollSCM '*/1 * * * *'                            // Poll the SCM every minute
 
     // environment {
     //     AGE = '25'                                     // Set AGE environment variable
     //     PATH = "/usr/local/bin:$PATH"                  // Or Set the PATH environment variable
-    }
+    // }
     stages {
         stage('Build') {
             steps {
