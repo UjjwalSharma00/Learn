@@ -23,6 +23,10 @@ pipeline {
                 sh '''                                // Execute shell script with sh ''' '''          //Error
                 cd myapp                              // Change directory to myapp                     //E
                 pip install -r requirements.txt       // Install dependencies from requirements.txt    //E
+                or
+                apt install python3-(python_package)
+                or
+                pipx install (python_packages)
                 '''
             }
         }
