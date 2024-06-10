@@ -41,7 +41,6 @@ pipeline {
                 input 'Do you want to deploy to production?'     // Wait for user input to proceed
             }
         }
-        
         stage('Deliver') {
             steps {
                 echo 'Deliver....'
